@@ -57,8 +57,19 @@ public class MyMain {
     // Hint: use your previous method!
     // Hint 2: you might need to loop through the columns!
     public static int findMostAppleColumn(String[][] mat) {
-        // YOUR CODE HERE
-        return -1;
+        int[] arr = new int[mat[0].length];
+        for (int i = 0; i < mat[0].length; i++) {
+            arr[i] = appleCounter(mat, i);
+        }
+        int temp = arr[0];
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > temp) {
+                temp = arr[i];
+                count = i;
+            }
+        }
+        return count;
     }
 
 
